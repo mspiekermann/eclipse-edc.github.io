@@ -33,8 +33,17 @@ jobs:
           git commit -m "docs: update autodoc markdowns"
           
           git push origin update-autodoc
+          
+          if git diff-index HEAD; then
+            echo "No changes detected. Skipping commit and PR creation."
+            echo "no_changes=true" >> $GITHUB_ENV
+          else
+            git commit -m "docs: update autodoc markdowns"
+            git push origin update-autodoc
+          fi
 
       - name: Create pull request
+        if: env.no_changes != 'true'
         uses: thomaseizinger/create-pull-request@1.4.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
