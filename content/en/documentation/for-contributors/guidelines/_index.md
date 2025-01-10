@@ -35,6 +35,8 @@ see if it has already been raised. If not, open a discussion (not an issue).
   in the appropriate repository.
 - For general topics (including project planning, relationship to other projects, etc.) use the [EDC
   organization discussions](https://github.com/orgs/eclipse-edc/discussions).
+- To get a list of issues whereas a new contributor you can contribute to, please take a look at
+  [this page](https://github.com/search?q=org%3Aeclipse-edc+label%3A%22good+first+issue%22+state%3Aopen&type=issues&ref=advsearch). 
 
 ### Creating an Issue
 
