@@ -28,18 +28,14 @@ jobs:
           git config user.email "edc-bot@eclipse.org"
           
           git checkout -b update-autodoc
-          
-          git add .
-          git commit -m "docs: update autodoc markdowns"
-          
-          git push origin update-autodoc
-          
-          if git diff-index HEAD; then
-            echo "No changes detected. Skipping commit and PR creation."
-            echo "no_changes=true" >> $GITHUB_ENV
-          else
+      
+          if [[ `git status --porcelain` ]]; then
+            git add .
             git commit -m "docs: update autodoc markdowns"
             git push origin update-autodoc
+          else
+            echo "No changes detected. Skipping commit and PR creation."
+            echo "no_changes=true" >> $GITHUB_ENV
           fi
 
       - name: Create pull request
