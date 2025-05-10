@@ -1,6 +1,6 @@
 # eclipse-edc.github.io website
 
-This repository contains project-wide documentation.
+This repository contains project-wide documentation without any broken links.
 
 ## Running the website locally
 
@@ -38,4 +38,5 @@ To remove the produced images run:
 ```bash
 docker compose rm
 ```
+
 For more information see the [Docker Compose documentation][].
